@@ -1,0 +1,913 @@
+/* Reset CSS và thiết lập cơ bản cho trang web */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Khai báo biến CSS toàn cục cho màu sắc chủ đạo của trang */
+:root {
+  --bg-color: #080808;
+  --second-bg-color: #101010;
+  --text-color: white;
+  --main-color: #5bf0f0;
+}
+
+/* Thiết lập kích thước font chung và ngăn cuộn ngang */
+html {
+  font-size: 60%;
+  overflow-x: hidden;
+}
+
+/* Thiết lập màu nền và màu chữ mặc định cho trang */
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Định dạng header - phần cố định ở đầu trang */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 4rem 15%;
+  background: black;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Icon menu cho thiết bị di động */
+#menu-icon {
+  font-size: 3.5rem;
+  color: var(--main-color);
+  display: none;
+}
+
+/* Định dạng logo */
+.logo {
+  font-size: 3rem;
+  color: var(--text-color);
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+/* Hiệu ứng khi hover vào logo */
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* Gradient text cho các phần highlight */
+span {
+  background: linear-gradient(170deg, #f4f806 10%, #d60902 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+/* Định dạng các liên kết trong thanh điều hướng */
+.navbar a {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-left: 3rem;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+  border-bottom: 3px solid transparent;
+}
+
+/* Hiệu ứng khi hover vào liên kết điều hướng */
+.navbar a:hover {
+  color: var(--main-color);
+  border-bottom: 3px solid var(--main-color);
+}
+
+/* Định dạng nút gradient */
+.gradient-btn {
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  background: linear-gradient(270deg, #ddb476 10%, #ff1d15 100%);
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  color: white;
+  text-wrap: nowrap;
+}
+
+/* Thiết lập chung cho các section */
+section {
+  min-height: 100vh;
+  padding: 10rem 15%;
+}
+
+/* Định dạng section home */
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15rem;
+}
+
+/* Định dạng nội dung section home */
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  margin-top: 3rem;
+}
+
+/* Định dạng tiêu đề lớn trong section home */
+.home-content h1 {
+  font-size: 8rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  line-height: 1;
+}
+
+/* Định dạng tiêu đề vừa trong section home */
+.home-content h3 {
+  margin: 1rem 0;
+  font-size: 4rem;
+}
+
+/* Định dạng đoạn văn trong section home */
+.home-content p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.8;
+}
+
+/* Định dạng ảnh đại diện trong section home */
+.home-img img {
+  width: 32vw;
+  border-radius: 50%;
+  box-shadow: 0 0 25px var(--main-color);
+  transition: 0.3s ease-in-out;
+}
+
+/* Hiệu ứng khi hover vào ảnh đại diện */
+.home-img img:hover {
+  box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color),
+    0 0 100px var(--main-color);
+}
+
+/* Định dạng các icon mạng xã hội */
+.social-icon a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  padding: 1rem;
+  background: transparent;
+  border: 2px solid var(--main-color);
+  border-radius: 50%;
+  color: var(--main-color);
+  margin: 3rem 0.5rem;
+  transition: 0.3s ease-in-out;
+}
+
+/* Hiệu ứng khi hover vào icon mạng xã hội */
+.social-icon a:hover {
+  background: var(--main-color);
+  color: var(--text-color);
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 0 25px var(--main-color);
+}
+
+/* Định dạng nhóm nút */
+.btn-group {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Định dạng nút tiêu chuẩn */
+.btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background-color: var(--main-color);
+  box-shadow: 0 0 25px var(--main-color);
+  border-radius: 3rem;
+  font-size: 1.8rem;
+  color: black;
+  border: 2px solid transparent;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+
+/* Hiệu ứng khi hover vào nút tiêu chuẩn */
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
+}
+
+/* Định dạng nút thứ hai trong nhóm nút */
+.btn-group a:nth-child(2) {
+  background-color: black;
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
+  box-shadow: 0 0 25px transparent;
+}
+
+/* Hiệu ứng khi hover vào nút thứ hai */
+.btn-group a:nth-of-type(2):hover {
+  box-shadow: 0 0 25px var(--main-color);
+  background-color: var(--main-color);
+  color: black;
+}
+
+/* Định dạng section about */
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6rem;
+  background: var(--second-bg-color);
+  padding: 10rem 15%;
+}
+
+/* Bỏ about-top-container hoặc điều chỉnh để tương thích */
+.about-top-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6rem;
+  width: 100%;
+}
+
+/* Điều chỉnh kích thước và style cho about-img */
+.about-img {
+  width: 40rem;
+  height: 40rem;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  max-width: none;
+}
+
+/* Điều chỉnh grid layout cho ảnh */
+.about-img-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  height: 100%;
+  padding: 8px;
+}
+
+/* Style cho ảnh trong grid */
+.about-img-grid img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1; /* Luôn là hình vuông */
+  object-fit: cover; /* Cắt ảnh vừa khít, tập trung vào giữa */
+  object-position: center; /* Lấy phần trung tâm ảnh */
+  transition: 0.5s ease;
+  border-radius: 1rem;
+  border: 3px solid rgb(111, 106, 121);
+  box-shadow: 0 0 10px rgb(99, 232, 236);
+}
+
+/* Hiệu ứng hover cho ảnh */
+.about-img-grid img:hover {
+  transform: scale(1.05);
+  border-color: #e2cece;
+  box-shadow: 0 0 10px var(--main-color);
+  z-index: 1;
+}
+
+/* Điều chỉnh content area */
+.about-content {
+  flex: 1 1 40rem;
+  text-align: left;
+  max-width: none;
+}
+
+/* Điều chỉnh heading trong about content */
+.about-content h2 {
+  font-size: 4.5rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+/* Điều chỉnh paragraph trong about content */
+.about-content p {
+  font-size: 1.6rem;
+  margin: 2rem 0 3rem;
+  line-height: 1.7;
+}
+
+/* Button trong about section */
+.about-content .btn {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* Giữ nguyên styles cho interests và certificates */
+.interests,
+.certificates {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+/* Tùy chỉnh thanh cuộn - phần thumb */
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+}
+
+/* Tùy chỉnh thanh cuộn - phần track */
+::-webkit-scrollbar-track {
+  background-color: var(--bg-color);
+}
+
+/* Định dạng các tiêu đề section */
+.heading {
+  text-align: center;
+  font-size: 7rem;
+  margin: 5rem 0;
+}
+
+/* Định dạng section services */
+.services {
+  background-color: var(--bg-color);
+  color: black;
+}
+
+/* Định dạng tiêu đề trong section services */
+.services h2 {
+  color: var(--text-color);
+}
+
+/* Định dạng container chứa các service box */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* Định dạng từng service box */
+.service-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-color);
+  height: 600px;
+  border-radius: 3rem;
+  cursor: pointer;
+  border: 5px solid transparent;
+  transition: 0.4s ease-in-out;
+}
+
+/* Hiệu ứng khi hover vào service box */
+.service-box:hover {
+  background: var(--second-bg-color);
+  color: var(--main-color);
+  border: 5px solid var(--main-color);
+  transform: scale(1.03);
+}
+
+/* Định dạng thông tin trong service box */
+.service-info {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+}
+
+/* Định dạng tiêu đề trong service box */
+.service-info h4 {
+  font-size: 4rem;
+  margin: 2rem 0;
+  font-weight: 800;
+}
+
+/* Định dạng đoạn văn trong service box */
+.service-info p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+/* Định dạng icon trong service box */
+.service-info i {
+  font-size: 8rem;
+}
+
+/* Định dạng section projects */
+.projects {
+  background-color: var(--bg-color);
+}
+
+/* Định dạng container chứa các project card */
+.projects-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  gap: 3rem;
+  row-gap: 5rem;
+}
+
+/* Định dạng từng project card */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5rem 2rem;
+  border-radius: 3rem;
+  background-color: var(--bg-color);
+  border: 2px solid var(--main-color);
+  gap: 2rem;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 0 5px var(--main-color);
+  transition: 0.3s ease;
+}
+
+/* Hiệu ứng khi hover vào project card */
+.project-card:hover {
+  box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
+  transform: scale(1.02);
+}
+
+/* Định dạng ảnh trong project card */
+.project-card img {
+  max-width: 300px;
+  border-radius: 2em;
+  object-fit: cover;
+}
+
+/* Định dạng tiêu đề trong project card */
+.project-card h3 {
+  font-size: 3rem;
+}
+
+/* Định dạng đoạn văn trong project card */
+.project-card p {
+  font-size: 1.6rem;
+}
+
+/* Định dạng section contact */
+.contact {
+  background-color: var(--bg-color);
+}
+
+/* Định dạng tiêu đề trong section contact */
+.contact h2 {
+  margin-bottom: 3rem;
+  color: var(--text-color);
+}
+
+/* Định dạng form trong section contact */
+.contact form {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  gap: 3rem;
+  margin: 5rem 0;
+  text-align: center;
+}
+
+/* Định dạng các input và textarea trong form */
+.contact form .input-box input,
+.contact form textarea {
+  width: 100%;
+  padding: 2.5rem;
+  font-size: 1.8rem;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  border-radius: 2rem;
+  border: 2px solid var(--main-color);
+  margin: 1.5rem 0;
+}
+
+/* Định dạng footer */
+.footer {
+  background-color: var(--second-bg-color);
+  padding: 50px 0;
+}
+
+/* Định dạng phần icon mạng xã hội trong footer */
+.footer .social-icons {
+  text-align: center;
+}
+
+/* Định dạng danh sách trong footer */
+.footer ul {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/* Định dạng danh sách trong footer (duplicate) */
+.footer ul {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/* Định dạng các item trong danh sách footer */
+.footer ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+/* Định dạng các link trong danh sách footer */
+.footer ul li a {
+  color: white;
+  border-bottom: 3px solid transparent;
+  transition: 0.3s ease-in-out;
+}
+
+/* Hiệu ứng khi hover vào link trong footer */
+.footer ul li a:hover {
+  border-bottom: 3px solid var(--main-color);
+}
+
+/* Định dạng phần copyright */
+.footer .copyright {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 16px;
+}
+
+/* Styles for Interests section - Định dạng phần sở thích */
+.interests {
+  margin-top: 4rem;
+  padding: 4rem;
+}
+
+/* Định dạng tiêu đề Awards */
+.Awards {
+  font-size: 30px;
+}
+
+/* Định dạng tiêu đề trong phần interests */
+.interests h3 {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Định dạng container chứa các interest box */
+.interests-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Định dạng từng interest box */
+.interest-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-color);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  border: 2px solid var(--main-color);
+  transition: 0.3s ease;
+}
+
+/* Hiệu ứng khi hover vào interest box */
+.interest-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--main-color);
+}
+
+/* Định dạng icon trong interest box */
+.interest-box i {
+  font-size: 4rem;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+}
+
+/* Định dạng tiêu đề trong interest box */
+.interest-box h4 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Skill carousel styles - Định dạng carousel kỹ năng */
+.skills-section {
+  background-color: var(--second-bg-color);
+  overflow: hidden;
+}
+
+/* Định dạng container carousel */
+.skills-carousel {
+  width: 100%;
+  overflow: hidden;
+  margin: 5rem 0 3rem;
+  position: relative;
+}
+
+/* Định dạng track kỹ năng chạy từ phải qua trái */
+.skills-track {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  border-bottom: 3px solid var(--main-color);
+  padding-bottom: 4rem; /* Thêm padding để tránh icons chạm vào đường cách */
+}
+
+/* Định dạng track kỹ năng chạy từ trái qua phải */
+.reverse-skills-track {
+  display: flex;
+  animation: reverse-scroll 30s linear infinite;
+  margin-top: 4rem; /* Tạo khoảng cách giữa hai track */
+  border-top: 3px solid var(--main-color); /* Đường cách màu đỏ */
+  padding-top: 4rem; /* Thêm padding để tránh icons chạm vào đường cách */
+}
+
+/* Animation cho reverse-skills-track - chạy từ trái qua phải */
+@keyframes reverse-scroll {
+  0% {
+    transform: translateX(calc(-150px * 14 - 40px * 14));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Định dạng từng icon kỹ năng */
+.skill-icon {
+  flex: 0 0 150px;
+  height: 150px;
+  margin: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s;
+}
+
+/* Định dạng icon trong skill-icon */
+.skill-icon i {
+  font-size: 8rem;
+  filter: drop-shadow(0 0 5px rgba(234, 88, 12, 0.3));
+  transition: 0.3s ease;
+}
+
+/* Hiệu ứng khi hover vào skill icon */
+.skill-icon:hover {
+  transform: translateY(-15px) scale(1.1);
+}
+
+/* Hiệu ứng khi hover vào icon trong skill icon */
+.skill-icon:hover i {
+  filter: drop-shadow(0 0 10px var(--main-color));
+}
+
+/* Animation cho skills-track - chạy từ phải qua trái */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(
+      calc(-150px * 14 - 40px * 14)
+    ); /* Icon width + margin */
+  }
+}
+
+/* Thêm hiệu ứng khi hover toàn bộ carousel - dừng animation */
+.skills-carousel:hover .skills-track {
+  animation-play-state: paused;
+}
+
+/* Thêm hiệu ứng khi hover cả reverse-skills-track - dừng animation */
+.skills-carousel:hover .reverse-skills-track {
+  animation-play-state: paused;
+}
+
+/* Thêm gradient màu đỏ cho đường cách để nổi bật hơn */
+.skills-track,
+.reverse-skills-track {
+  position: relative;
+}
+
+/* Tạo đường viền gradient dưới track thứ nhất */
+.skills-track::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--main-color),
+    transparent
+  );
+  box-shadow: 0 0 10px var(--main-color);
+}
+
+/* Tạo đường viền gradient trên track thứ hai */
+.reverse-skills-track::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--main-color),
+    transparent
+  );
+  box-shadow: 0 0 10px var(--main-color);
+}
+
+/* Styles for Targets section - Định dạng phần mục tiêu nghề nghiệp */
+.targets {
+  background-color: var(
+    --second-bg-color
+  ); /* Thay đổi từ --bg-color thành --second-bg-color */
+}
+
+/* Định dạng container chứa các mục tiêu */
+.targets-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+/* Định dạng từng item mục tiêu */
+.target-item {
+  display: flex;
+  align-items: center;
+  background: var(--second-bg-color);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  border: 2px solid var(--main-color);
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+/* Hiệu ứng khi hover vào target item */
+.target-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 15px var(--main-color);
+}
+
+/* Định dạng icon trong target item */
+.target-item i {
+  font-size: 3rem;
+  color: var(--main-color);
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+}
+
+/* Định dạng tiêu đề trong target content */
+.target-content h4 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Media queries cho màn hình lớn (desktop và laptop) */
+@media (max-width: 1285px) {
+  #menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 50%;
+    padding: 1rem 3rem;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom-left-radius: 2rem;
+    border-left: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+    display: none;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+    color: var(--text-color);
+  }
+
+  .navbar.active {
+    display: block;
+  }
+
+  .gradient-btn {
+    display: none;
+  }
+
+  .home {
+    flex-direction: column-reverse;
+    margin: 5rem 0;
+    gap: 5rem;
+  }
+
+  .home-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-img img {
+    width: 56vw;
+  }
+
+  .about {
+    padding: 10rem 10%;
+  }
+
+  .about-img {
+    width: 90%;
+  }
+}
+
+/* Media queries cho màn hình trung bình (tablet) */
+@media (max-width: 768px) {
+  .projects-box {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .about-img-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .about-img {
+    width: 100%;
+  }
+
+  .interests-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .certificates h3 {
+    font-size: 3rem;
+  }
+
+  .certificate-item.no-cert {
+    padding: 2rem;
+  }
+
+  .certificate-item.no-cert p {
+    font-size: 1.8rem;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .about-content h2 {
+    text-align: center;
+  }
+}
+
+/* Media queries cho màn hình nhỏ (mobile) */
+@media (max-width: 450px) {
+  .interests-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Điều chỉnh CSS để duy trì hiển thị khi tách phần interests */
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  background: var(--second-bg-color);
+}
+
+.about-content,
+.interests,
+.certificates {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.interests,
+.certificates {
+  margin-top: 0; /* Bỏ margin-top vì đã có gap trong .about */
+}
