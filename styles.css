@@ -931,3 +931,93 @@ section {
 .certificates {
   margin-top: 0; /* Bỏ margin-top vì đã có gap trong .about */
 }
+
+/* Cập nhật style cho section targets */
+.targets {
+  background-color: var(--second-bg-color);
+  min-height: 100vh;
+  padding: 10rem 15%;
+}
+
+/* Style cho heading */
+.targets .heading {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+/* Cập nhật grid layout cho targets container */
+.targets-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding: 2rem;
+}
+
+/* Style cho từng target item */
+.target-item {
+  background: var(--bg-color);
+  padding: 3rem 2rem;
+  border-radius: 2rem;
+  border: 2px solid var(--main-color);
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+/* Hiệu ứng hover cho target item */
+.target-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px var(--main-color);
+}
+
+/* Style cho icon trong target item */
+.target-item i {
+  font-size: 5rem;
+  color: var(--main-color);
+  margin-bottom: 2rem;
+}
+
+/* Style cho heading trong target item */
+.target-item h4 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+/* Style cho paragraph trong target item */
+.target-item p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Media queries cho responsive */
+@media (max-width: 1024px) {
+  .targets-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .targets-container {
+    grid-template-columns: 1fr;
+  }
+
+  .target-item {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 450px) {
+  .targets {
+    padding: 10rem 5%;
+  }
+
+  .target-item h4 {
+    font-size: 2rem;
+  }
+
+  .target-item p {
+    font-size: 1.4rem;
+  }
+}
