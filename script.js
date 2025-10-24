@@ -13,3 +13,12 @@ menuIcon.onclick = () => {
   // Hiển thị/ẩn thanh điều hướng khi click vào icon
   navbar.classList.toggle("active");
 };
+
+// Xử lý sự kiện click vào nút Contact Me
+let contactBtn = document.querySelector(".gradient-btn");
+contactBtn.onclick = (e) => {
+    e.preventDefault(); // Ngăn chặn hành vi mặc định của button
+    document.querySelector("#contact").scrollIntoView({
+        behavior: "smooth" // Tạo hiệu ứng scroll mượt
+    });
+};
